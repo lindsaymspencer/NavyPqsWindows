@@ -32,6 +32,7 @@ namespace NavyPqsWindows
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.lstOfficers = new System.Windows.Forms.ListView();
             this.btnNewOfficer = new System.Windows.Forms.Button();
+            this.btnViewOfficer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstOfficers
@@ -39,12 +40,13 @@ namespace NavyPqsWindows
             this.lstOfficers.HideSelection = false;
             this.lstOfficers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.lstOfficers.Location = new System.Drawing.Point(12, 100);
+            this.lstOfficers.Location = new System.Drawing.Point(12, 52);
             this.lstOfficers.Name = "lstOfficers";
             this.lstOfficers.Size = new System.Drawing.Size(776, 338);
             this.lstOfficers.TabIndex = 0;
             this.lstOfficers.UseCompatibleStateImageBehavior = false;
             this.lstOfficers.View = System.Windows.Forms.View.Details;
+            this.lstOfficers.SelectedIndexChanged += new System.EventHandler(this.lstOfficers_SelectedIndexChanged);
             // 
             // btnNewOfficer
             // 
@@ -56,11 +58,22 @@ namespace NavyPqsWindows
             this.btnNewOfficer.UseVisualStyleBackColor = true;
             this.btnNewOfficer.Click += new System.EventHandler(this.btnNewOfficer_Click);
             // 
+            // btnViewOfficer
+            // 
+            this.btnViewOfficer.Location = new System.Drawing.Point(13, 397);
+            this.btnViewOfficer.Name = "btnViewOfficer";
+            this.btnViewOfficer.Size = new System.Drawing.Size(152, 32);
+            this.btnViewOfficer.TabIndex = 2;
+            this.btnViewOfficer.Text = "View Selected Officer";
+            this.btnViewOfficer.UseVisualStyleBackColor = true;
+            this.btnViewOfficer.Click += new System.EventHandler(this.btnViewOfficer_Click);
+            // 
             // FrmCwoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnViewOfficer);
             this.Controls.Add(this.btnNewOfficer);
             this.Controls.Add(this.lstOfficers);
             this.Name = "FrmCwoApp";
@@ -73,6 +86,7 @@ namespace NavyPqsWindows
 
         private System.Windows.Forms.ListView lstOfficers;
         private System.Windows.Forms.Button btnNewOfficer;
+        private System.Windows.Forms.Button btnViewOfficer;
     }
 }
 
