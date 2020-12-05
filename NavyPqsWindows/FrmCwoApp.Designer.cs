@@ -33,6 +33,7 @@ namespace NavyPqsWindows
             this.lstOfficers = new System.Windows.Forms.ListView();
             this.btnNewOfficer = new System.Windows.Forms.Button();
             this.btnViewOfficer = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstOfficers
@@ -68,11 +69,22 @@ namespace NavyPqsWindows
             this.btnViewOfficer.UseVisualStyleBackColor = true;
             this.btnViewOfficer.Click += new System.EventHandler(this.btnViewOfficer_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(172, 397);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(159, 32);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete Officer";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // FrmCwoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnViewOfficer);
             this.Controls.Add(this.btnNewOfficer);
             this.Controls.Add(this.lstOfficers);
@@ -87,6 +99,7 @@ namespace NavyPqsWindows
         private System.Windows.Forms.ListView lstOfficers;
         private System.Windows.Forms.Button btnNewOfficer;
         private System.Windows.Forms.Button btnViewOfficer;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

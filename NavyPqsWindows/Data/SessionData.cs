@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NavyPqsWindows.Models;
 
 namespace NavyPqsWindows.Data
@@ -69,6 +65,11 @@ namespace NavyPqsWindows.Data
         {
             officer.Id = GetNextOfficerId();
             officers.Add(officer);
+        }
+
+        public void DeleteOfficer(int id)
+        {
+            officers.RemoveAt(id);
         }
 
         private int GetNextOfficerId()

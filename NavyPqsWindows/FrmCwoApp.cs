@@ -65,5 +65,11 @@ namespace NavyPqsWindows
             form.Close();
             AddOfficersToList();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            data.DeleteOfficer(selectedIndex);
+            AddOfficersToList();
+        }
     }
 }
