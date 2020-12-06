@@ -1,7 +1,7 @@
 ﻿
 namespace NavyPqsWindows
 {
-    partial class EditOfficer
+    partial class frmEditOfficer
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace NavyPqsWindows
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRank
@@ -51,14 +51,14 @@ namespace NavyPqsWindows
             // 
             this.txtRank.Location = new System.Drawing.Point(102, 13);
             this.txtRank.Name = "txtRank";
-            this.txtRank.Size = new System.Drawing.Size(100, 22);
+            this.txtRank.Size = new System.Drawing.Size(160, 22);
             this.txtRank.TabIndex = 1;
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(102, 69);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 22);
+            this.txtLastName.Size = new System.Drawing.Size(160, 22);
             this.txtLastName.TabIndex = 3;
             // 
             // lblLastName
@@ -74,7 +74,7 @@ namespace NavyPqsWindows
             // 
             this.txtFirstName.Location = new System.Drawing.Point(102, 41);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 22);
+            this.txtFirstName.Size = new System.Drawing.Size(160, 22);
             this.txtFirstName.TabIndex = 2;
             // 
             // lblFirstName
@@ -86,30 +86,30 @@ namespace NavyPqsWindows
             this.lblFirstName.TabIndex = 4;
             this.lblFirstName.Text = "First Name";
             // 
-            // btnUpdate
+            // btnSave
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(67, 106);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 31);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnSave.Location = new System.Drawing.Point(102, 113);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(94, 31);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // EditOfficer
+            // frmEditOfficer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 156);
-            this.Controls.Add(this.btnUpdate);
+            this.ClientSize = new System.Drawing.Size(274, 156);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtRank);
             this.Controls.Add(this.lblRank);
-            this.Name = "EditOfficer";
-            this.Text = "Officer";
+            this.Name = "frmEditOfficer";
+            this.Text = "Edit Officer";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +123,6 @@ namespace NavyPqsWindows
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSave;
     }
 }

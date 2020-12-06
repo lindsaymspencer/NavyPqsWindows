@@ -8,7 +8,9 @@ namespace NavyPqsWindows.Data
         private List<Officer> officers = new List<Officer>();
 
         private int nextId = 0;
-        
+
+        public List<Officer> Officers => officers;
+
         public SessionData()
         {
             officers.Add(new Officer
@@ -45,19 +47,6 @@ namespace NavyPqsWindows.Data
                 LastName = "Peterson",
                 FirstName = "Aurora",
                 Rank = "c/A1C"
-            });
-        }
-
-        public List<Officer> Officers => officers;
-
-        public void AddOfficer(string rank, string firstName, string lastName)
-        {
-            officers.Add(new Officer
-            {
-                Id = GetNextOfficerId(),
-                LastName = lastName,
-                FirstName = firstName,
-                Rank = rank
             });
         }
 

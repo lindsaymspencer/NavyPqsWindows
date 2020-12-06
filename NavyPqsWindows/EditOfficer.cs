@@ -4,11 +4,11 @@ using NavyPqsWindows.Models;
 
 namespace NavyPqsWindows
 {
-    public partial class EditOfficer : Form
+    public partial class frmEditOfficer : Form
     {
         private Officer officer;
 
-        public EditOfficer(Officer officer)
+        public frmEditOfficer(Officer officer)
         {
             InitializeComponent();
             txtRank.Text = officer.Rank;
@@ -17,7 +17,7 @@ namespace NavyPqsWindows
             this.officer = officer;
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             officer.Rank = txtRank.Text;
             officer.FirstName = txtFirstName.Text;

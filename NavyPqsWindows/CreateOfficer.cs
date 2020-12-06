@@ -4,11 +4,11 @@ using NavyPqsWindows.Models;
 
 namespace NavyPqsWindows
 {
-    public partial class CreateOfficer : Form
+    public partial class frmCreateOfficer : Form
     {
         private Officer officer;
 
-        public CreateOfficer()
+        public frmCreateOfficer()
         {
             InitializeComponent();
         }

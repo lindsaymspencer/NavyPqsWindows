@@ -1,7 +1,7 @@
 ﻿
 namespace NavyPqsWindows
 {
-    partial class FrmCwoApp
+    partial class frmCwoApp
     {
         /// <summary>
         /// Required designer variable.
@@ -48,6 +48,7 @@ namespace NavyPqsWindows
             this.lstOfficers.UseCompatibleStateImageBehavior = false;
             this.lstOfficers.View = System.Windows.Forms.View.Details;
             this.lstOfficers.SelectedIndexChanged += new System.EventHandler(this.lstOfficers_SelectedIndexChanged);
+            this.lstOfficers.DoubleClick += new System.EventHandler(this.lstOfficers_DoubleClick);
             // 
             // btnNewOfficer
             // 
@@ -63,7 +64,7 @@ namespace NavyPqsWindows
             // 
             this.btnViewOfficer.Location = new System.Drawing.Point(13, 397);
             this.btnViewOfficer.Name = "btnViewOfficer";
-            this.btnViewOfficer.Size = new System.Drawing.Size(152, 32);
+            this.btnViewOfficer.Size = new System.Drawing.Size(204, 32);
             this.btnViewOfficer.TabIndex = 2;
             this.btnViewOfficer.Text = "View Selected Officer";
             this.btnViewOfficer.UseVisualStyleBackColor = true;
@@ -71,7 +72,7 @@ namespace NavyPqsWindows
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(172, 397);
+            this.btnDelete.Location = new System.Drawing.Point(223, 397);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(159, 32);
             this.btnDelete.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace NavyPqsWindows
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // FrmCwoApp
+            // frmCwoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,7 +89,7 @@ namespace NavyPqsWindows
             this.Controls.Add(this.btnViewOfficer);
             this.Controls.Add(this.btnNewOfficer);
             this.Controls.Add(this.lstOfficers);
-            this.Name = "FrmCwoApp";
+            this.Name = "frmCwoApp";
             this.Text = "CWO PQS App";
             this.ResumeLayout(false);
 

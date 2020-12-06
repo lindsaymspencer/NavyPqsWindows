@@ -1,7 +1,7 @@
 ﻿
 namespace NavyPqsWindows
 {
-    partial class CreateOfficer
+    partial class frmCreateOfficer
     {
         /// <summary>
         /// Required designer variable.
@@ -96,7 +96,7 @@ namespace NavyPqsWindows
             this.btnCreateOfficer.UseVisualStyleBackColor = true;
             this.btnCreateOfficer.Click += new System.EventHandler(this.btnCreateOfficer_Click);
             // 
-            // CreateOfficer
+            // frmCreateOfficer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,8 +108,8 @@ namespace NavyPqsWindows
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtRank);
             this.Controls.Add(this.lblRank);
-            this.Name = "CreateOfficer";
-            this.Text = "CreateOfficer";
+            this.Name = "frmCreateOfficer";
+            this.Text = "New Officer";
             this.ResumeLayout(false);
             this.PerformLayout();
 
