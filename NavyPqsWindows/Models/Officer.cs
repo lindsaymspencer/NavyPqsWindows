@@ -17,7 +17,10 @@ namespace NavyPqsWindows.Models
         public string LastName { get; set; }
 
         public CwoPqs TwoBravo { get; set; } = CwoPqs.NewTwoBravo();
-      
+
+        [JsonIgnore]
+        public CwoPqs TwoAlpha { get; set; } = CwoPqs.NewTwoAlpha();
+
         public string ToJson() => JsonSerializer.Serialize(this);
      
         public bool Export(string path)
@@ -33,6 +36,7 @@ namespace NavyPqsWindows.Models
             toCopyTo.FirstName = toCopyFrom.FirstName ?? toCopyTo.FirstName;
             toCopyTo.LastName = toCopyFrom.LastName ?? toCopyTo.LastName;
             toCopyTo.Rank = toCopyFrom.Rank ?? toCopyTo.Rank;
+            toCopyTo.TwoAlpha = CwoPqs.CopyCwoPqs(toCopyTo.TwoAlpha, toCopyFrom.TwoAlpha);
             toCopyTo.TwoBravo = CwoPqs.CopyCwoPqs(toCopyTo.TwoBravo, toCopyFrom.TwoBravo);
 
             return toCopyTo;
