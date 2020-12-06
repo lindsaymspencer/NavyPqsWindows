@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace NavyPqsWindows.Models
 {
@@ -40,6 +43,7 @@ namespace NavyPqsWindows.Models
             "Publications and Mission Associated Directives Fundamentals;131;1;2;3;4;5"
         };
 
+        [JsonIgnore]
         public string Name { get; set; }
 
         public List<Section> Sections { get; set; }
@@ -85,5 +89,7 @@ namespace NavyPqsWindows.Models
                 sectionCounter++;
             }
         }
+        
+        public string ToJson() => JsonSerializer.Serialize(this);
     }
 }

@@ -34,6 +34,7 @@ namespace NavyPqsWindows
             this.btnNewOfficer = new System.Windows.Forms.Button();
             this.btnViewOfficer = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnExportOfficer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstOfficers
@@ -72,7 +73,7 @@ namespace NavyPqsWindows
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(223, 397);
+            this.btnDelete.Location = new System.Drawing.Point(378, 396);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(159, 32);
             this.btnDelete.TabIndex = 3;
@@ -80,11 +81,22 @@ namespace NavyPqsWindows
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnExportOfficer
+            // 
+            this.btnExportOfficer.Location = new System.Drawing.Point(223, 397);
+            this.btnExportOfficer.Name = "btnExportOfficer";
+            this.btnExportOfficer.Size = new System.Drawing.Size(149, 32);
+            this.btnExportOfficer.TabIndex = 4;
+            this.btnExportOfficer.Text = "Export Officer";
+            this.btnExportOfficer.UseVisualStyleBackColor = true;
+            this.btnExportOfficer.Click += new System.EventHandler(this.btnExportOfficer_Click);
+            // 
             // frmCwoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExportOfficer);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnViewOfficer);
             this.Controls.Add(this.btnNewOfficer);
@@ -101,6 +113,7 @@ namespace NavyPqsWindows
         private System.Windows.Forms.Button btnNewOfficer;
         private System.Windows.Forms.Button btnViewOfficer;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnExportOfficer;
     }
 }
 

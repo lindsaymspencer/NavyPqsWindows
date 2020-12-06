@@ -81,5 +81,18 @@ namespace NavyPqsWindows
             form.Close();
             AddOfficersToList();
         }
+
+        private void btnExportOfficer_Click(object sender, EventArgs e)
+        {
+            var folderBrowserDialog = new FolderBrowserDialog();
+
+            // Show the FolderBrowserDialog.
+            DialogResult result = folderBrowserDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string folderName = folderBrowserDialog.SelectedPath;
+                data.Officers[selectedIndex].Export(folderName);
+            }
+        }
     }
 }
