@@ -91,5 +91,19 @@ namespace NavyPqsWindows.Models
         }
         
         public string ToJson() => JsonSerializer.Serialize(this);
+        public static CwoPqs CopyCwoPqs(CwoPqs toCopyTo, CwoPqs toCopyFrom)
+        {
+            if (toCopyFrom == null)
+            {
+                return toCopyTo;
+            }
+
+            for(int i = 0; i < toCopyTo.Sections.Count; i++)
+            {
+                toCopyTo.Sections[i] = Section.CopySection(toCopyTo.Sections[i], toCopyFrom.Sections[i]);
+            }
+
+            return toCopyTo;
+        }
     }
 }

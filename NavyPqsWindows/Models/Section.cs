@@ -14,5 +14,18 @@ namespace NavyPqsWindows.Models
 
         public bool[] Signed { get; set; }
 
+        public static Section CopySection(Section toCopyTo, Section toCopyFrom)
+        {
+            if (toCopyFrom == null)
+            {
+                return toCopyTo;
+            }
+
+            for(int i = 0; i < toCopyTo.Signed.Length; i++)
+            {
+                toCopyTo.Signed[i] = toCopyFrom.Signed[i];
+            }
+            return toCopyTo;
+        }
     }
 }

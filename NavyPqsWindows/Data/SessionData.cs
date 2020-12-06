@@ -5,60 +5,26 @@ namespace NavyPqsWindows.Data
 {
     public class SessionData
     {
-        private List<Officer> officers = new List<Officer>();
-
         private int nextId = 0;
 
-        public List<Officer> Officers => officers;
-
-        public SessionData()
-        {
-            officers.Add(new Officer
-            {
-                Id = GetNextOfficerId(),
-                FirstName = "Lindsay",
-                LastName = "Spencer",
-                Rank = "LTJG"
-            });
-            officers.Add(new Officer
-            {
-                Id = GetNextOfficerId(),
-                LastName = "Moss",
-                FirstName = "Christopher",
-                Rank = "LT"
-            });
-            officers.Add(new Officer
-            {
-                Id = GetNextOfficerId(),
-                LastName = "Spencer",
-                FirstName = "Christopher",
-                Rank = "c/SrA"
-            });
-            officers.Add(new Officer
-            {
-                Id = GetNextOfficerId(),
-                LastName = "Spencer",
-                FirstName = "Paul",
-                Rank = "c/A1C"
-            });
-            officers.Add(new Officer
-            {
-                Id = GetNextOfficerId(),
-                LastName = "Peterson",
-                FirstName = "Aurora",
-                Rank = "c/A1C"
-            });
-        }
+        public List<Officer> Officers { get; } = new List<Officer>();
 
         public void AddOfficer(Officer officer)
         {
             officer.Id = GetNextOfficerId();
-            officers.Add(officer);
+            Officers.Add(officer);
+        }
+
+        public void CreateOfficerFrom(string json)
+        {
+            var newOfficer = Officer.CreateFrom(json);
+            newOfficer.Id = GetNextOfficerId();
+            Officers.Add(newOfficer);
         }
 
         public void DeleteOfficer(int id)
         {
-            officers.RemoveAt(id);
+            Officers.RemoveAt(id);
         }
 
         private int GetNextOfficerId()

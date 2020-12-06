@@ -26,5 +26,23 @@ namespace NavyPqsWindows.Models
                 ToJson());
             return true;
         }
+
+        public static Officer CopyOfficer(Officer toCopyTo, Officer toCopyFrom)
+        {
+            toCopyTo.Id = toCopyFrom.Id;
+            toCopyTo.FirstName = toCopyFrom.FirstName ?? toCopyTo.FirstName;
+            toCopyTo.LastName = toCopyFrom.LastName ?? toCopyTo.LastName;
+            toCopyTo.Rank = toCopyFrom.Rank ?? toCopyTo.Rank;
+            toCopyTo.TwoBravo = CwoPqs.CopyCwoPqs(toCopyTo.TwoBravo, toCopyFrom.TwoBravo);
+
+            return toCopyTo;
+        }
+
+        public static Officer CreateFrom(string jsonString)
+        {
+           var x = JsonSerializer.Deserialize<Officer>(jsonString);
+           var o = Officer.CopyOfficer(new Officer(), x);
+           return o;
+        }
     }
 }

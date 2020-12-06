@@ -35,6 +35,7 @@ namespace NavyPqsWindows
             this.btnViewOfficer = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExportOfficer = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstOfficers
@@ -91,11 +92,22 @@ namespace NavyPqsWindows
             this.btnExportOfficer.UseVisualStyleBackColor = true;
             this.btnExportOfficer.Click += new System.EventHandler(this.btnExportOfficer_Click);
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(172, 13);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(132, 33);
+            this.btnImport.TabIndex = 5;
+            this.btnImport.Text = "Import Officer";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // frmCwoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnExportOfficer);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnViewOfficer);
@@ -114,6 +126,7 @@ namespace NavyPqsWindows
         private System.Windows.Forms.Button btnViewOfficer;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExportOfficer;
+        private System.Windows.Forms.Button btnImport;
     }
 }
 

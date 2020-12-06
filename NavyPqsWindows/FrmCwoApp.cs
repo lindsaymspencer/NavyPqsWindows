@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NavyPqsWindows.Data;
+using NavyPqsWindows.Services;
 
 namespace NavyPqsWindows
 {
@@ -84,15 +85,15 @@ namespace NavyPqsWindows
 
         private void btnExportOfficer_Click(object sender, EventArgs e)
         {
-            var folderBrowserDialog = new FolderBrowserDialog();
+            string folderName = FileHelper.GetDirectory();
+            data.Officers[selectedIndex].Export(folderName);
+        }
 
-            // Show the FolderBrowserDialog.
-            DialogResult result = folderBrowserDialog.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                string folderName = folderBrowserDialog.SelectedPath;
-                data.Officers[selectedIndex].Export(folderName);
-            }
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            string fileContent = FileHelper.ReadFile();
+            data.CreateOfficerFrom(fileContent);
+            AddOfficersToList();
         }
     }
 }
