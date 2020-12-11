@@ -1,7 +1,7 @@
 ﻿using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using NavyPqsWindows.Models;
 using NavyPqsWindows.Services;
+using Newtonsoft.Json;
 
 namespace NavyPqsWindows.Models
 {
@@ -10,18 +10,22 @@ namespace NavyPqsWindows.Models
         [JsonIgnore]
         public int Id { get; set; }
 
+        [JsonProperty(Order = 1)]
         public string Rank { get; set; }
 
+        [JsonProperty(Order = 2)]
         public string FirstName { get; set; }
 
+        [JsonProperty(Order = 3)]
         public string LastName { get; set; }
 
-        public CwoPqs TwoBravo { get; set; } = CwoPqs.NewTwoBravo();
-
         [JsonIgnore]
-        public CwoPqs TwoAlpha { get; set; } = CwoPqs.NewTwoAlpha();
+        public Cwo.TwoAlpha TwoAlpha = new Cwo.TwoAlpha();
 
-        public string ToJson() => JsonSerializer.Serialize(this);
+        [JsonProperty("CWO.TwoBravo", Order = 4)]
+        public Cwo.TwoBravo TwoBravo = new Cwo.TwoBravo();
+
+        public string ToJson() => JsonConvert.SerializeObject(this);
      
         public bool Export(string path)
         {
@@ -36,17 +40,16 @@ namespace NavyPqsWindows.Models
             toCopyTo.FirstName = toCopyFrom.FirstName ?? toCopyTo.FirstName;
             toCopyTo.LastName = toCopyFrom.LastName ?? toCopyTo.LastName;
             toCopyTo.Rank = toCopyFrom.Rank ?? toCopyTo.Rank;
-            toCopyTo.TwoAlpha = CwoPqs.CopyCwoPqs(toCopyTo.TwoAlpha, toCopyFrom.TwoAlpha);
-            toCopyTo.TwoBravo = CwoPqs.CopyCwoPqs(toCopyTo.TwoBravo, toCopyFrom.TwoBravo);
-
             return toCopyTo;
         }
 
         public static Officer CreateFrom(string jsonString)
         {
-           var x = JsonSerializer.Deserialize<Officer>(jsonString);
-           var o = Officer.CopyOfficer(new Officer(), x);
-           return o;
+            // TODO: Fix this.
+           //var x = JsonSerializer.Deserialize<Officer>(jsonString);
+           //var o = Officer.CopyOfficer(new Officer(), x);
+           //return o;
+           return new Officer();
         }
     }
 }

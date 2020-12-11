@@ -1,16 +1,14 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NavyPqsWindows.Models
 {
     public class Section
     {
-        [JsonIgnore]
-        public string Name { get; set; }
+        [JsonIgnore] public string Name { get; set; }
 
         public string Number { get; set; }
 
-        [JsonIgnore]
-        public string[] LineItem { get; set; }
+        [JsonIgnore] public string[] LineItem { get; set; }
 
         public bool[] Signed { get; set; }
 
