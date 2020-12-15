@@ -35,7 +35,6 @@ namespace NavyPqsWindows
             this.btnViewOfficer = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExportOfficer = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstOfficers
@@ -44,6 +43,7 @@ namespace NavyPqsWindows
             this.lstOfficers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.lstOfficers.Location = new System.Drawing.Point(12, 52);
+            this.lstOfficers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstOfficers.Name = "lstOfficers";
             this.lstOfficers.Size = new System.Drawing.Size(776, 338);
             this.lstOfficers.TabIndex = 0;
@@ -54,7 +54,8 @@ namespace NavyPqsWindows
             // 
             // btnNewOfficer
             // 
-            this.btnNewOfficer.Location = new System.Drawing.Point(13, 13);
+            this.btnNewOfficer.Location = new System.Drawing.Point(13, 14);
+            this.btnNewOfficer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewOfficer.Name = "btnNewOfficer";
             this.btnNewOfficer.Size = new System.Drawing.Size(152, 33);
             this.btnNewOfficer.TabIndex = 1;
@@ -64,7 +65,8 @@ namespace NavyPqsWindows
             // 
             // btnViewOfficer
             // 
-            this.btnViewOfficer.Location = new System.Drawing.Point(13, 397);
+            this.btnViewOfficer.Location = new System.Drawing.Point(13, 398);
+            this.btnViewOfficer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewOfficer.Name = "btnViewOfficer";
             this.btnViewOfficer.Size = new System.Drawing.Size(204, 32);
             this.btnViewOfficer.TabIndex = 2;
@@ -74,7 +76,8 @@ namespace NavyPqsWindows
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(378, 396);
+            this.btnDelete.Location = new System.Drawing.Point(379, 396);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(159, 32);
             this.btnDelete.TabIndex = 3;
@@ -84,7 +87,8 @@ namespace NavyPqsWindows
             // 
             // btnExportOfficer
             // 
-            this.btnExportOfficer.Location = new System.Drawing.Point(223, 397);
+            this.btnExportOfficer.Location = new System.Drawing.Point(223, 398);
+            this.btnExportOfficer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportOfficer.Name = "btnExportOfficer";
             this.btnExportOfficer.Size = new System.Drawing.Size(149, 32);
             this.btnExportOfficer.TabIndex = 4;
@@ -92,27 +96,17 @@ namespace NavyPqsWindows
             this.btnExportOfficer.UseVisualStyleBackColor = true;
             this.btnExportOfficer.Click += new System.EventHandler(this.btnExportOfficer_Click);
             // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(172, 13);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(132, 33);
-            this.btnImport.TabIndex = 5;
-            this.btnImport.Text = "Import Officer";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // frmCwoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnExportOfficer);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnViewOfficer);
             this.Controls.Add(this.btnNewOfficer);
             this.Controls.Add(this.lstOfficers);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCwoApp";
             this.Text = "CWO PQS App";
             this.ResumeLayout(false);
@@ -126,7 +120,6 @@ namespace NavyPqsWindows
         private System.Windows.Forms.Button btnViewOfficer;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExportOfficer;
-        private System.Windows.Forms.Button btnImport;
     }
 }
 

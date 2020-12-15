@@ -42,18 +42,10 @@ namespace NavyPqsWindows.Models.Cwo
         };
 
         [JsonIgnore]
-        public string Name
-        {
-            get => "NAVEDTRA 43357-2B";
-            set { }
-        }
+        public string Name => "NAVEDTRA 43357-2B";
 
         [JsonIgnore]
-        public string Date
-        {
-            get => "14 March 2020";
-            set { }
-        }
+        public string Date => "14 March 2020";
 
         public List<Section> Sections { get; set; }
 

@@ -88,12 +88,5 @@ namespace NavyPqsWindows
             string folderName = FileHelper.GetDirectory();
             data.Officers[selectedIndex].Export(folderName);
         }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            string fileContent = FileHelper.ReadFile();
-            data.CreateOfficerFrom(fileContent);
-            AddOfficersToList();
-        }
     }
 }

@@ -5,9 +5,9 @@ namespace NavyPqsWindows.Models
 {
     interface IPqs
     {
-        [JsonIgnore] string Name { get; set; }
+        [JsonIgnore] string Name { get; }
 
-        [JsonIgnore] string Date { get; set; }
+        [JsonIgnore] string Date { get; }
 
         List<Section> Sections { get; set; }
 

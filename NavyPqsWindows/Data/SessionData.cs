@@ -15,13 +15,6 @@ namespace NavyPqsWindows.Data
             Officers.Add(officer);
         }
 
-        public void CreateOfficerFrom(string json)
-        {
-            var newOfficer = Officer.CreateFrom(json);
-            newOfficer.Id = GetNextOfficerId();
-            Officers.Add(newOfficer);
-        }
-
         public void DeleteOfficer(int id)
         {
             Officers.RemoveAt(id);
