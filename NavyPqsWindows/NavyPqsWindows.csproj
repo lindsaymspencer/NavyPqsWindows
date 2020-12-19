@@ -89,7 +89,10 @@
     </Compile>
     <Compile Include="Models\Cwo\TwoAlpha.cs" />
     <Compile Include="Models\Cwo\TwoBravo.cs" />
+    <Compile Include="Models\IConversionModel.cs" />
+    <Compile Include="Models\ConversionReport.cs" />
     <Compile Include="Models\IPqs.cs" />
+    <Compile Include="Models\LineItemConversion.cs" />
     <Compile Include="Models\Officer.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Program.cs" />
@@ -100,9 +103,10 @@
     <Compile Include="EditOfficer.Designer.cs">
       <DependentUpon>EditOfficer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\CwoPqs2Ato2B.cs" />
+    <Compile Include="Services\ConvertPqs.cs" />
     <Compile Include="Services\FileHelper.cs" />
     <Compile Include="Services\PqsHelpers.cs" />
-    <Compile Include="Services\OfficerConverter.cs" />
     <Compile Include="ViewOfficer.cs">
       <SubType>Form</SubType>
     </Compile>

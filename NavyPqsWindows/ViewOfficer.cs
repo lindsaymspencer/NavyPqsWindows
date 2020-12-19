@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NavyPqsWindows.Models;
+using NavyPqsWindows.Services;
 
 namespace NavyPqsWindows
 {
@@ -121,6 +122,13 @@ namespace NavyPqsWindows
         private void RefreshData()
         {
             lblName.Text = officer.Rank + " " + officer.FirstName + " " + officer.LastName;
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            var report =  ConvertPqs.Convert(officer.TwoAlpha, officer.TwoBravo, new CwoPqs2Ato2B());
+            // TODO: Fix this
+            RefreshData();
         }
     }
 }
