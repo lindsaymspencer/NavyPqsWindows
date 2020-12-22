@@ -47,7 +47,7 @@ namespace NavyPqsWindows
 
         private void cmbBxSections2A_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblSave2A.Text = "";
+            lbl2aMessage.Text = "";
             Section section = officer.TwoAlpha.Sections[cmbBxSections2A.SelectedIndex];
             selectedSection2A = cmbBxSections2A.SelectedIndex;
             lstBxLineItems2A.Items.Clear();
@@ -73,7 +73,7 @@ namespace NavyPqsWindows
 
         private void lstBxLineItems2A_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblSave2A.Text = "";
+            lbl2aMessage.Text = "";
         }
 
         private void lstBxLineItems2B_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,21 +83,26 @@ namespace NavyPqsWindows
 
         private void btnSave2A_Click(object sender, EventArgs e)
         {
-           var x = lstBxLineItems2A.CheckedIndices;
-           for(int i = 0; i < officer.TwoAlpha.Sections[selectedSection2A].Signed.Length; i++)
-           {
-               if (x.Contains(i))
-               {
-                   officer.TwoAlpha.Sections[selectedSection2A].Signed[i] = true;
-               }
-               else
-               {
-                   officer.TwoAlpha.Sections[selectedSection2A].Signed[i] = false;
+            Save2A();
 
-               }
-           }
+           lbl2aMessage.Text = "Save Successful!";
+        }
 
-           lblSave2A.Text = "Save Successful!";
+        private void Save2A()
+        {
+            var x = lstBxLineItems2A.CheckedIndices;
+            for (int i = 0; i < officer.TwoAlpha.Sections[selectedSection2A].Signed.Length; i++)
+            {
+                if (x.Contains(i))
+                {
+                    officer.TwoAlpha.Sections[selectedSection2A].Signed[i] = true;
+                }
+                else
+                {
+                    officer.TwoAlpha.Sections[selectedSection2A].Signed[i] = false;
+
+                }
+            }
         }
 
         private void btnSave2B_Click(object sender, EventArgs e)
@@ -126,9 +131,36 @@ namespace NavyPqsWindows
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
+            Save2A();
             var report =  ConvertPqs.Convert(officer.TwoAlpha, officer.TwoBravo, new CwoPqs2Ato2B());
             // TODO: Fix this
             RefreshData();
+
+            lbl2aMessage.Text = "Conversion Successful! Please close officer.";
+            // Hack
+            Close();
+        }
+
+        private void btn2aSelectAll_Click(object sender, EventArgs e)
+        {
+            Section section = officer.TwoAlpha.Sections[cmbBxSections2A.SelectedIndex];
+            lstBxLineItems2A.Items.Clear();
+
+            for (int i = 0; i < section.LineItem.Length; i++)
+            {
+                lstBxLineItems2A.Items.Add(section.LineItem[i], true);
+            }
+        }
+
+        private void btn2BSelectAll_Click(object sender, EventArgs e)
+        {
+            Section section = officer.TwoBravo.Sections[cmbBxSections2B.SelectedIndex];
+            lstBxLineItems2B.Items.Clear();
+
+            for (int i = 0; i < section.LineItem.Length; i++)
+            {
+                lstBxLineItems2B.Items.Add(section.LineItem[i], true);
+            }
         }
     }
 }

@@ -15,6 +15,24 @@ namespace NavyPqsWindows
 
         private void btnCreateOfficer_Click(object sender, EventArgs e)
         {
+            CreateOfficer();
+        }
+
+        public Officer SendData()
+        {
+            return officer;
+        }
+
+        void tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CreateOfficer();
+            }
+        }
+
+        private void CreateOfficer() {
+
             officer = new Officer
             {
                 LastName = txtLastName.Text,
@@ -22,11 +40,6 @@ namespace NavyPqsWindows
                 Rank = txtRank.Text
             };
             this.Visible = false;
-        }
-
-        public Officer SendData()
-        {
-            return officer;
         }
     }
 }

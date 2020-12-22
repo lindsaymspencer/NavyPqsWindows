@@ -41,56 +41,61 @@ namespace NavyPqsWindows
             // lblRank
             // 
             this.lblRank.AutoSize = true;
-            this.lblRank.Location = new System.Drawing.Point(24, 17);
+            this.lblRank.Location = new System.Drawing.Point(27, 21);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(41, 17);
+            this.lblRank.Size = new System.Drawing.Size(47, 20);
             this.lblRank.TabIndex = 0;
             this.lblRank.Text = "Rank";
             // 
             // txtRank
             // 
-            this.txtRank.Location = new System.Drawing.Point(116, 17);
+            this.txtRank.Location = new System.Drawing.Point(130, 21);
+            this.txtRank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRank.Name = "txtRank";
-            this.txtRank.Size = new System.Drawing.Size(157, 22);
+            this.txtRank.Size = new System.Drawing.Size(176, 26);
             this.txtRank.TabIndex = 1;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(116, 73);
+            this.txtLastName.Location = new System.Drawing.Point(130, 91);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(157, 22);
+            this.txtLastName.Size = new System.Drawing.Size(176, 26);
             this.txtLastName.TabIndex = 3;
+            this.txtLastName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(24, 76);
+            this.lblLastName.Location = new System.Drawing.Point(27, 95);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(76, 17);
+            this.lblLastName.Size = new System.Drawing.Size(86, 20);
             this.lblLastName.TabIndex = 2;
             this.lblLastName.Text = "Last Name";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(116, 45);
+            this.txtFirstName.Location = new System.Drawing.Point(130, 56);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(157, 22);
+            this.txtFirstName.Size = new System.Drawing.Size(176, 26);
             this.txtFirstName.TabIndex = 2;
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(24, 45);
+            this.lblFirstName.Location = new System.Drawing.Point(27, 56);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(76, 17);
+            this.lblFirstName.Size = new System.Drawing.Size(86, 20);
             this.lblFirstName.TabIndex = 4;
             this.lblFirstName.Text = "First Name";
             // 
             // btnCreateOfficer
             // 
-            this.btnCreateOfficer.Location = new System.Drawing.Point(83, 110);
+            this.btnCreateOfficer.Location = new System.Drawing.Point(93, 138);
+            this.btnCreateOfficer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateOfficer.Name = "btnCreateOfficer";
-            this.btnCreateOfficer.Size = new System.Drawing.Size(117, 32);
+            this.btnCreateOfficer.Size = new System.Drawing.Size(132, 40);
             this.btnCreateOfficer.TabIndex = 4;
             this.btnCreateOfficer.Text = "Create Officer";
             this.btnCreateOfficer.UseVisualStyleBackColor = true;
@@ -98,9 +103,9 @@ namespace NavyPqsWindows
             // 
             // frmCreateOfficer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 164);
+            this.ClientSize = new System.Drawing.Size(338, 205);
             this.Controls.Add(this.btnCreateOfficer);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
@@ -108,6 +113,7 @@ namespace NavyPqsWindows
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtRank);
             this.Controls.Add(this.lblRank);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCreateOfficer";
             this.Text = "New Officer";
             this.ResumeLayout(false);
