@@ -138,6 +138,9 @@ namespace NavyPqsWindows
 
             lbl2aMessage.Text = "Conversion Successful! Please close officer.";
             // Hack
+
+            string folderName = FileHelper.GetDirectory();
+            PdfWriter.Write(report.ToString(), System.IO.Path.Combine(folderName, officer.LastName + "ConversionReport.pdf"));
             Close();
         }
 
