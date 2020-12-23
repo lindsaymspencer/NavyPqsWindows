@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Models\CwoTests\CwoPqsTests.cs" />
     <Compile Include="Models\OfficerTests.cs" />
+    <Compile Include="Presenter\CreateOfficerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CwoPqs2Ato2BTests.cs" />
     <Compile Include="Services\FileHelperTests.cs" />

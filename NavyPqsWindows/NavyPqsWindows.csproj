@@ -89,17 +89,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateOfficer.cs">
+    <Compile Include="Presenter\CreateOfficerPresenter.cs" />
+    <Compile Include="Presenter\ICreateOfficerView.cs" />
+    <Compile Include="View\CreateOfficer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateOfficer.Designer.cs">
+    <Compile Include="View\CreateOfficer.Designer.cs">
       <DependentUpon>CreateOfficer.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\SessionData.cs" />
-    <Compile Include="FrmCwoApp.cs">
+    <Compile Include="View\FrmCwoApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCwoApp.Designer.cs">
+    <Compile Include="View\FrmCwoApp.Designer.cs">
       <DependentUpon>FrmCwoApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Cwo\TwoAlpha.cs" />
@@ -112,10 +114,10 @@
     <Compile Include="Models\Section.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EditOfficer.cs">
+    <Compile Include="View\EditOfficer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditOfficer.Designer.cs">
+    <Compile Include="View\EditOfficer.Designer.cs">
       <DependentUpon>EditOfficer.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\PdfWriter.cs" />
@@ -123,19 +125,19 @@
     <Compile Include="Services\ConvertPqs.cs" />
     <Compile Include="Services\FileHelper.cs" />
     <Compile Include="Services\PqsHelpers.cs" />
-    <Compile Include="ViewOfficer.cs">
+    <Compile Include="View\ViewOfficer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewOfficer.Designer.cs">
+    <Compile Include="View\ViewOfficer.Designer.cs">
       <DependentUpon>ViewOfficer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CreateOfficer.resx">
+    <EmbeddedResource Include="View\CreateOfficer.resx">
       <DependentUpon>CreateOfficer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditOfficer.resx">
+    <EmbeddedResource Include="View\EditOfficer.resx">
       <DependentUpon>EditOfficer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCwoApp.resx">
+    <EmbeddedResource Include="View\FrmCwoApp.resx">
       <DependentUpon>FrmCwoApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -147,7 +149,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ViewOfficer.resx">
+    <EmbeddedResource Include="View\ViewOfficer.resx">
       <DependentUpon>ViewOfficer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
