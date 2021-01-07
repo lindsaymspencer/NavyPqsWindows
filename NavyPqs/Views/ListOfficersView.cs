@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using NavyPqs.Data;
+using NavyPqs.Interfaces.Views;
 
 namespace NavyPqs.Views
 {
-    public partial class ListOfficersView : Form
+    public partial class ListOfficersView : Form, IListOfficerView
     {
         private SessionData data = new SessionData();
 

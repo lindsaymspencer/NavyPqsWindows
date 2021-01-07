@@ -1,6 +1,6 @@
 ﻿namespace NavyPqs.Interfaces.Tasks
 {
-    interface IOfficer
+    interface IOfficerTask
     {
 
     }

@@ -2,7 +2,7 @@
 
 namespace NavyPqs.Interfaces.Views
 {
-    public interface ICreateOfficer
+    public interface ICreateOfficerView
     {
         Officer Officer { get; set; }
     }

@@ -37,7 +37,7 @@ namespace NavyPqsTests.Services
             return true;
         }
 
-        private static void SetSignatureFor(string section, IPqs pqs)
+        private static void SetSignatureFor(string section, IPqsModel pqs)
         {
 
             string[] sectionSplit = section.Split('.');

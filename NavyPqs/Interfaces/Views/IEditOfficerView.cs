@@ -1,6 +1,6 @@
 ﻿namespace NavyPqs.Interfaces.Views
 {
-    interface IEditOfficer
+    interface IEditOfficerView
     {
     }
 }

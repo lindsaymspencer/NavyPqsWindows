@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace NavyPqs.Models.Cwo
 {
-    public class TwoAlpha : IPqs
+    public class TwoAlpha : IPqsModel
     {
         [JsonIgnore] private readonly string[] twoAlphaSectionsByLine =
         {

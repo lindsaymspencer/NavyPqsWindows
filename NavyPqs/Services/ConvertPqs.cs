@@ -8,7 +8,7 @@ namespace NavyPqs.Services
 {
     public static class ConvertPqs
     {
-        public static ConversionReport Convert(IPqs oldPqs, IPqs newPqs, IConversionModel model)
+        public static ConversionReport Convert(IPqsModel oldPqs, IPqsModel newPqs, IConversionModel model)
         {
             var report = new ConversionReport();
             report.Notes.Add(model.Notes);

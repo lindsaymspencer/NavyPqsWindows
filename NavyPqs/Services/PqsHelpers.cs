@@ -33,7 +33,7 @@ namespace NavyPqs.Services
             }
         }
 
-        public static IPqs CopyPqs(IPqs toCopyTo, IPqs toCopyFrom)
+        public static IPqsModel CopyPqs(IPqsModel toCopyTo, IPqsModel toCopyFrom)
         {
             if (toCopyFrom == null)
             {

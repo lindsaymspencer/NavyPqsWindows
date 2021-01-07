@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace NavyPqs.Interfaces.Models
 {
-    public interface IPqs
+    public interface IPqsModel
     {
         [JsonIgnore] string Name { get; }
 
