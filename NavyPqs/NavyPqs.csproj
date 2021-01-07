@@ -89,10 +89,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\Views\IListOfficerView.cs" />
+    <Compile Include="Interfaces\Views\IListOfficersView.cs" />
+    <Compile Include="Interfaces\Models\IOfficers.cs" />
+    <Compile Include="Models\Officers.cs" />
     <Compile Include="Presenters\CreateOfficerPresenter.cs" />
     <Compile Include="Interfaces\Views\ICreateOfficerView.cs" />
     <Compile Include="Interfaces\Views\IEditOfficerView.cs" />
+    <Compile Include="Presenters\ListOfficersPresenter.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Interfaces\Tasks\IOfficerTask.cs" />
     <Compile Include="Views\CreateOfficerView.cs">

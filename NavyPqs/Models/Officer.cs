@@ -21,10 +21,10 @@ namespace NavyPqs.Models
 
         public string ToJson() => JsonConvert.SerializeObject(this);
 
-        public bool Export(string path)
+        public bool Export()
         {
-            FileHelper.WriteOver(Path.Combine(path, LastName + FirstName + ".cw2bpqs"),
-                ToJson());
+            string folderName = FileHelper.GetDirectory();
+            FileHelper.WriteOver(Path.Combine(folderName, LastName + FirstName + ".pqs"), ToJson());
             return true;
         }
 

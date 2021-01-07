@@ -1,36 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
-using NavyPqs.Data;
 using NavyPqs.Interfaces.Views;
+using NavyPqs.Models;
+using NavyPqs.Presenters;
 
 namespace NavyPqs.Views
 {
-    public partial class ListOfficersView : Form, IListOfficerView
+
+    public partial class ListOfficersView : Form, IListOfficersView
     {
-        private SessionData data = new SessionData();
+        private readonly ListOfficersPresenter presenter;
+        private readonly Officers model;
 
-        private int selectedIndex = 0;
-
-        public ListOfficersView()
+        public ListOfficersView(Officers model)
         {
+            this.model = model;
             InitializeComponent();
+            presenter = new ListOfficersPresenter(this, this.model);
             SetUpList();
-            AddOfficersToList();
         }
 
-        public void AddOfficersToList()
-        {
-            lstOfficers.Items.Clear();
-            for (var i = 0; i < data.Officers.Count; i++)
-            {
-                lstOfficers.Items.Add(data.Officers[i].Id.ToString());
-                lstOfficers.Items[i].SubItems.Add(data.Officers[i].Rank);
-                lstOfficers.Items[i].SubItems.Add(data.Officers[i].FirstName);
-                lstOfficers.Items[i].SubItems.Add(data.Officers[i].LastName);
-            }
-        }
-
-        public void SetUpList()
+        private void SetUpList()
         {
             lstOfficers.View = View.Details;
             lstOfficers.FullRowSelect = true;
@@ -41,54 +31,46 @@ namespace NavyPqs.Views
             lstOfficers.Columns.Add("Last Name", 100, HorizontalAlignment.Left);
         }
 
-        private void btnNewOfficer_Click(object sender, System.EventArgs e)
+        public void SetData()
         {
-            var form = new CreateOfficerView();
-            form.ShowDialog();
-            var officer = form.SendData();
-            form.Close();
-            data.AddOfficer(officer);
-            AddOfficersToList();
+            lstOfficers.Items.Clear();
+            for (var i = 0; i < model.OfficerList.Count; i++)
+            {
+                lstOfficers.Items.Add(model.OfficerList[i].Id.ToString());
+                lstOfficers.Items[i].SubItems.Add(model.OfficerList[i].Rank);
+                lstOfficers.Items[i].SubItems.Add(model.OfficerList[i].FirstName);
+                lstOfficers.Items[i].SubItems.Add(model.OfficerList[i].LastName);
+            }
+        }
+
+        private void btnNewOfficer_Click(object sender, EventArgs e)
+        {
+            presenter.CreateNewOfficer();
         }
 
         private void lstOfficers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstOfficers.SelectedItems.Count > 0)
-            {
-                selectedIndex = lstOfficers.Items.IndexOf(lstOfficers.SelectedItems[0]);
-            }
+            presenter.SelectedIndexChanged(lstOfficers.Items.IndexOf(lstOfficers.SelectedItems[0]));
         }
 
         private void btnViewOfficer_Click(object sender, EventArgs e)
         {
-            ShowViewOfficer();
+            presenter.ViewOfficer();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            data.DeleteOfficer(selectedIndex);
-            AddOfficersToList();
+            presenter.DeleteOfficer();
         }
 
         private void lstOfficers_DoubleClick(object sender, EventArgs e)
         {
-            ShowViewOfficer();
+            presenter.ViewOfficer();
         }
-
-        private void ShowViewOfficer()
-        {
-            var form = new frmViewOfficer(data.Officers[selectedIndex]);
-            form.ShowDialog();
-            form.Close();
-            AddOfficersToList();
-        }
-
+        
         private void btnExportOfficer_Click(object sender, EventArgs e)
         {
-            // TODO: REMOVE
-            string folderName = @"C:\Users\LindsaySpencer\Desktop";
-            //string folderName = FileHelper.GetDirectory();
-            data.Officers[selectedIndex].Export(folderName);
+            presenter.ExportOfficer();
         }
     }
 }

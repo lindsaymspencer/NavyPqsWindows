@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using NavyPqs.Data;
 using NavyPqs.Views;
 
 namespace NavyPqs
@@ -14,7 +15,8 @@ namespace NavyPqs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListOfficersView());
+            var data = new SessionData();
+            Application.Run(new ListOfficersView(data.Officers));
         }
     }
 }
