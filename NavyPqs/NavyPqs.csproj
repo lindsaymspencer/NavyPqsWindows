@@ -90,10 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\CreateOfficerPresenter.cs" />
-    <Compile Include="Presenters\ICreateOfficerView.cs" />
-    <Compile Include="Presenters\IEditOfficerView.cs" />
+    <Compile Include="Interfaces\Views\ICreateOfficer.cs" />
+    <Compile Include="Interfaces\Views\IEditOfficer.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Tasks\IOfficerTask.cs" />
+    <Compile Include="Interfaces\Tasks\IOfficer.cs" />
     <Compile Include="Views\CreateOfficerView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +109,9 @@
     </Compile>
     <Compile Include="Models\Cwo\TwoAlpha.cs" />
     <Compile Include="Models\Cwo\TwoBravo.cs" />
-    <Compile Include="Models\IConversionModel.cs" />
+    <Compile Include="Interfaces\Models\IConversion.cs" />
     <Compile Include="Models\ConversionReport.cs" />
-    <Compile Include="Models\IPqs.cs" />
+    <Compile Include="Interfaces\Models\IPqs.cs" />
     <Compile Include="Models\LineItemConversion.cs" />
     <Compile Include="Models\Officer.cs" />
     <Compile Include="Models\Section.cs" />
@@ -170,6 +170,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tasks\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

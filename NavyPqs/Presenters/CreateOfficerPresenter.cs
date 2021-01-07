@@ -1,11 +1,13 @@
-﻿namespace NavyPqs.Presenters
+﻿using NavyPqs.Interfaces.Views;
+
+namespace NavyPqs.Presenters
 {
     public class CreateOfficerPresenter
     {
-        private readonly ICreateOfficerView view;
+        private readonly ICreateOfficer view;
         //private readonly IOfficerTask task;
 
-        public CreateOfficerPresenter(ICreateOfficerView view) 
+        public CreateOfficerPresenter(ICreateOfficer view) 
         {
             this.view = view;
         }

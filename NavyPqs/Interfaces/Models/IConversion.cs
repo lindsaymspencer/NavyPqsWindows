@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using NavyPqs.Models;
 
-namespace NavyPqs.Models
+namespace NavyPqs.Interfaces.Models
 {
     public interface IConversionModel
     {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using NavyPqs.Interfaces.Models;
 using NavyPqs.Models;
 
 namespace NavyPqs.Services

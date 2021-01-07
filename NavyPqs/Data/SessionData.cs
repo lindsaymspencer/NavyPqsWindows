@@ -5,7 +5,7 @@ namespace NavyPqs.Data
 {
     public class SessionData
     {
-        private int nextId = 0;
+        private int nextId;
 
         public List<Officer> Officers { get; } = new List<Officer>();
 
@@ -14,7 +14,7 @@ namespace NavyPqs.Data
             officer.Id = GetNextOfficerId();
             Officers.Add(officer);
         }
-        
+
         public void DeleteOfficer(int id)
         {
             Officers.RemoveAt(id);

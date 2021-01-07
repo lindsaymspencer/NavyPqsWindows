@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using NavyPqs.Models;
 using Newtonsoft.Json;
 
-namespace NavyPqs.Models
+namespace NavyPqs.Interfaces.Models
 {
     public interface IPqs
     {

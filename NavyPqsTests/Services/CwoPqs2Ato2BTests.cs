@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NavyPqs.Interfaces.Models;
 using NavyPqs.Models;
 using NavyPqs.Models.Cwo;
 using NavyPqs.Services;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
-namespace NavyPqsWindowsTests.Services
+namespace NavyPqsTests.Services
 {
     [TestFixture]
     public class CwoPqs2Ato2BTests
