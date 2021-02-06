@@ -1,11 +1,47 @@
 ﻿@model OfficersViewModel
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "View";
 }
-<h2>Officers</h2>
-<div>
-    @foreach(OfficerViewModel officer in Model.Officers)
-    {
-        <div>@officer.FullName</div>
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Officers[0].Rank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Officers[0].FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Officers[0].LastName)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Officers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
     }
-</div>
+    </tbody>
+</table>

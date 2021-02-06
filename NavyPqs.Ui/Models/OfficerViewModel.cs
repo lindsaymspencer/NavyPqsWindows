@@ -13,6 +13,5 @@ namespace NavyPqs.Ui.Models
         public string Rank { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName => $"{Rank} {FirstName} {LastName}";
     }
 }

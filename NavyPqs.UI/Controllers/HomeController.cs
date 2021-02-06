@@ -1,39 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NavyPqs.Ui.Models;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using NavyPqs.Domain.Interfaces;
 using NavyPqs.Domain.Models;
-using NavyPqs.Ui.Models;
 
 namespace NavyPqs.Ui.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> logger;
-        private readonly OfficerService officerService;
+        private readonly ILogger logger;
+        private readonly IOfficerService officerService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger logger, IOfficerService officerService)
         {
-            this.logger = logger;
-
-            officerService = new OfficerService();
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.officerService = officerService ?? throw new ArgumentNullException(nameof(officerService));
         }
 
         public IActionResult Index()
         {
             List<Officer> officers = officerService.GetOfficers();
-            var officersVM = new List<OfficerViewModel>();
-
-            foreach (var officer in officers)
-            {
-                officersVM.Add(new OfficerViewModel(officer));
-            }
-
-            var vm = new OfficersViewModel(officersVM);
-
+            List<OfficerViewModel> officersVm = officers.Select(officer => new OfficerViewModel(officer)).ToList();
+            var vm = new OfficersViewModel(officersVm);
             return View(vm);
         }
 

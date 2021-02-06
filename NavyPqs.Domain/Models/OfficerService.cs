@@ -8,23 +8,10 @@ namespace NavyPqs.Domain.Models
     {
         private readonly IOfficerRepository repository;
 
-        public OfficerService()
+        public OfficerService(IOfficerRepository repository)
         {
-            this.repository = new TempRepo();
+            this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
         public List<Officer> GetOfficers() => repository.GetOfficers();
-    }
-
-    public class TempRepo : IOfficerRepository
-    {
-        public List<Officer> GetOfficers()
-        {
-            return new List<Officer>
-            {
-                new Officer("LTJG", "Lindsay", "Spencer"),
-                new Officer("LT", "Christopher", "Moss"),
-                new Officer("Foo", "Paul", "Spencer")
-            };
-        }
     }
 }

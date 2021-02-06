@@ -4,10 +4,11 @@ namespace NavyPqs.Ui.Models
 {
     public class OfficersViewModel
     {
-        public List<OfficerViewModel> Officers;
         public OfficersViewModel(List<OfficerViewModel> officers)
         {
             Officers = officers;
         }
+
+        public List<OfficerViewModel> Officers { get; }
     }
 }

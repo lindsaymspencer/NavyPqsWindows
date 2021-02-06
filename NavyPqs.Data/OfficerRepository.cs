@@ -8,12 +8,7 @@ namespace NavyPqs.Data
     {
         public List<Officer> GetOfficers()
         {
-            return new List<Officer>
-            {
-                new Officer("LTJG", "Lindsay", "Spencer"),
-                new Officer("LT", "Christopher", "Moss"),
-                new Officer("Foo", "Paul", "Spencer")
-            };
+            return new List<Officer>();
         }
     }
 }

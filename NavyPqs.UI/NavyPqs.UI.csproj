@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NavyPqs.Data\NavyPqs.Data.csproj" />
     <ProjectReference Include="..\NavyPqs.Domain\NavyPqs.Domain.csproj" />
+    <ProjectReference Include="..\NavyPqs.LocalLogger\NavyPqs.LocalLogger.csproj" />
   </ItemGroup>
 
 </Project>
