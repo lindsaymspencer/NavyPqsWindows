@@ -1,6 +1,6 @@
 using System;
 
-namespace NavyPqs.UI.Models
+namespace NavyPqs.Ui.Models
 {
     public class ErrorViewModel
     {

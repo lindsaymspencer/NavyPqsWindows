@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "NavyPqs.UI": {
+    "NavyPqs.Ui": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
