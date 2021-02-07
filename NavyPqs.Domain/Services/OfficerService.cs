@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using NavyPqs.Domain.Interfaces;
+using NavyPqs.Domain.Models;
 
-namespace NavyPqs.Domain.Models
+namespace NavyPqs.Domain.Services
 {
     public class OfficerService : IOfficerService
     {

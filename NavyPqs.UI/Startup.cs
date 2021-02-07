@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NavyPqs.Data;
 using NavyPqs.Domain.Interfaces;
-using NavyPqs.Domain.Models;
+using NavyPqs.Domain.Services;
 using NavyPqs.Logger;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
