@@ -66,8 +66,8 @@ namespace NavyPqs.Ui
         {
             // Add application services. For instance:
 
-            container.Register<IOfficerRepository, OfficerRepository>(Lifestyle.Scoped);
-            container.Register<IOfficerService, OfficerService>(Lifestyle.Scoped);
+            container.Register<ISailorRepository, SailorRepository>(Lifestyle.Scoped);
+            container.Register<ISailorService, SailorService>(Lifestyle.Scoped);
             container.Register<ILogger, LocalFileLogger>(Lifestyle.Singleton);
 
         }

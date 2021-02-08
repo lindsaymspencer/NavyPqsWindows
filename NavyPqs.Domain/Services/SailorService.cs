@@ -5,14 +5,14 @@ using NavyPqs.Domain.Models;
 
 namespace NavyPqs.Domain.Services
 {
-    public class OfficerService : IOfficerService
+    public class SailorService : ISailorService
     {
-        private readonly IOfficerRepository repository;
+        private readonly ISailorRepository repository;
 
-        public OfficerService(IOfficerRepository repository)
+        public SailorService(ISailorRepository repository)
         {
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
-        public List<Officer> GetOfficers() => repository.GetOfficers();
+        public List<Sailor> GetSailors() => repository.GetSailors();
     }
 }

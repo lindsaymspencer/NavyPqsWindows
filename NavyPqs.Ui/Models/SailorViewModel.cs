@@ -2,13 +2,13 @@
 
 namespace NavyPqs.Ui.Models
 {
-    public class OfficerViewModel
+    public class SailorViewModel
     {
-        public OfficerViewModel(Officer officer)
+        public SailorViewModel(Sailor sailor)
         {
-            Rank = officer.Rank;
-            FirstName = officer.FirstName;
-            LastName = officer.LastName;
+            Rank = sailor.Rank;
+            FirstName = sailor.FirstName;
+            LastName = sailor.LastName;
         }
         public string Rank { get; set; }
         public string FirstName { get; set; }

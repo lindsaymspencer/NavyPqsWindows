@@ -1,4 +1,4 @@
-﻿@model OfficersViewModel
+﻿@model IEnumerable<NavyPqs.Ui.Models.SailorViewModel>
 
 @{
     ViewData["Title"] = "View";
@@ -13,19 +13,19 @@
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Officers[0].Rank)
+            @Html.DisplayNameFor(model => model.Rank)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Officers[0].FirstName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Officers[0].LastName)
+            @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Officers) {
+    @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Rank)

@@ -13,9 +13,9 @@ namespace NavyPqs.Ui.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger logger;
-        private readonly IOfficerService officerService;
+        private readonly ISailorService officerService;
 
-        public HomeController(ILogger logger, IOfficerService officerService)
+        public HomeController(ILogger logger, ISailorService officerService)
         {
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.officerService = officerService ?? throw new ArgumentNullException(nameof(officerService));
@@ -23,10 +23,9 @@ namespace NavyPqs.Ui.Controllers
 
         public IActionResult Index()
         {
-            List<Officer> officers = officerService.GetOfficers();
-            List<OfficerViewModel> officersVm = officers.Select(officer => new OfficerViewModel(officer)).ToList();
-            var vm = new OfficersViewModel(officersVm);
-            return View(vm);
+            List<Sailor> officers = officerService.GetSailors();
+            List<SailorViewModel> officersVm = officers.Select(officer => new SailorViewModel(officer)).ToList();
+            return View(officersVm);
         }
 
         public IActionResult Privacy()

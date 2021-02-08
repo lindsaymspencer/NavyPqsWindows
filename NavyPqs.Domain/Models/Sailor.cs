@@ -2,9 +2,9 @@
 
 namespace NavyPqs.Domain.Models
 {
-    public class Officer
+    public class Sailor
     {
-        public Officer(string rank, string firstName, string lastName)
+        public Sailor(string rank, string firstName, string lastName)
         {
             Rank = rank;
             FirstName = firstName;

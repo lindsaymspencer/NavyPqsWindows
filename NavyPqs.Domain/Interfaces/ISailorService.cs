@@ -3,8 +3,8 @@ using NavyPqs.Domain.Models;
 
 namespace NavyPqs.Domain.Interfaces
 {
-    public interface IOfficerService
+    public interface ISailorService
     {
-        public List<Officer> GetOfficers();
+        public List<Sailor> GetSailors();
     }
 }
