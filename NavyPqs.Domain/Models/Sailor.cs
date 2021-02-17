@@ -4,8 +4,9 @@ namespace NavyPqs.Domain.Models
 {
     public class Sailor
     {
-        public Sailor(string rank, string firstName, string lastName)
+        public Sailor(int id, string rank, string firstName, string lastName)
         {
+            Id = id;
             Rank = rank;
             FirstName = firstName;
             LastName = lastName;

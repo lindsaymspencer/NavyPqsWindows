@@ -6,7 +6,9 @@ namespace NavyPqs.Domain.Interfaces
     public interface ISailorRepository
     {
         List<Sailor> GetSailors();
-        public void AddSailor(Sailor sailor);
-        public void DeleteSailor(int id);
+        Sailor GetSailor(int id);
+        public bool DeleteSailor(int id);
+        public bool CreateSailor(string rank, string firstName, string lastName);
+        public bool EditSailor(int id, Sailor sailor);
     }
 }
