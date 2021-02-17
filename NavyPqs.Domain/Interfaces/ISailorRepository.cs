@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using NavyPqs.Domain.Models;
+﻿using NavyPqs.Domain.Models;
+using System.Collections.Generic;
 
 namespace NavyPqs.Domain.Interfaces
 {
