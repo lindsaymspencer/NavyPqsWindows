@@ -15,7 +15,7 @@ namespace NavyPqs.Ui
 {
     public class Startup
     {
-        private readonly Container container = new Container();
+        private readonly Container container = new();
         
         public Startup(IConfiguration configuration)
         {
@@ -64,12 +64,10 @@ namespace NavyPqs.Ui
 
         private void InitializeContainer()
         {
-            // Add application services. For instance:
-
-            container.Register<ISailorRepository, SailorRepository>(Lifestyle.Scoped);
+            // Add application services.
+            container.Register<ISailorRepository, SailorRepository>(Lifestyle.Singleton);
             container.Register<ISailorService, SailorService>(Lifestyle.Scoped);
             container.Register<ILogger, LocalFileLogger>(Lifestyle.Singleton);
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -96,9 +94,8 @@ namespace NavyPqs.Ui
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Sailor}/{action=Index}/{id?}");
             });
-
 
             container.Verify();
         }
