@@ -10,5 +10,6 @@ namespace NavyPqs.Domain.Interfaces
         bool CreateSailor(string rank, string firstName, string lastName);
         bool EditSailor(int id, Sailor sailor);
         bool DeleteSailor(int id);
+        void AddPqsTo(int aSailorId, string pqs);
     }
 }

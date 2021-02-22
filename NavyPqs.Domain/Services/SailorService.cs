@@ -24,5 +24,21 @@ namespace NavyPqs.Domain.Services
         public bool EditSailor(int id, Sailor sailor) => repository.EditSailor(id, sailor);
 
         public bool DeleteSailor(int id) => repository.DeleteSailor(id);
+
+        public void AddPqsTo(int aSailorId, string pqs)
+        {
+            var sailor = GetSailor(aSailorId);
+            sailor.Pqses.Add(GetPqs());
+
+            IPqsModel GetPqs()
+            {
+                return pqs switch
+                {
+                    "CWO-2A" => new Models.Cwo.TwoAlpha(),
+                    "CWO-2B" => new Models.Cwo.TwoBravo(),
+                    _ => throw new ArgumentException($"Unknown PQS: {pqs}")
+                };
+            }
+        }
     }
 }
