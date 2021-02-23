@@ -2,6 +2,7 @@
 using NavyPqs.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NavyPqs.Domain.Services
 {
@@ -32,12 +33,13 @@ namespace NavyPqs.Domain.Services
 
             IPqsModel GetPqs()
             {
-                return pqs switch
+                // https://stackoverflow.com/questions/752/how-to-create-a-new-object-instance-from-a-type
+                foreach (var instance in from option in Pqs.Available 
+                    where option.Key == pqs select (IPqsModel)Activator.CreateInstance(option.Value))
                 {
-                    "CWO-2A" => new Models.Cwo.TwoAlpha(),
-                    "CWO-2B" => new Models.Cwo.TwoBravo(),
-                    _ => throw new ArgumentException($"Unknown PQS: {pqs}")
-                };
+                    return instance;
+                }
+                throw new ArgumentException($"Unknown PQS: {pqs}");
             }
         }
     }
