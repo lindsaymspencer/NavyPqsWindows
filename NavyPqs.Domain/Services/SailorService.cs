@@ -42,5 +42,7 @@ namespace NavyPqs.Domain.Services
                 throw new ArgumentException($"Unknown PQS: {pqs}");
             }
         }
+
+        public string[] GetAvailablePqses() => Pqs.GetAvailable();
     }
 }

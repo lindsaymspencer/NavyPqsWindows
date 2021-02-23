@@ -11,5 +11,6 @@ namespace NavyPqs.Domain.Interfaces
         bool EditSailor(int id, Sailor sailor);
         bool DeleteSailor(int id);
         void AddPqsTo(int aSailorId, string pqs);
+        string[] GetAvailablePqses();
     }
 }
