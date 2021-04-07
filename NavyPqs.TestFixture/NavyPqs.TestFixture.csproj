@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NavyPqs.Data\NavyPqs.Data.csproj" />
+    <ProjectReference Include="..\NavyPqs.Ui\NavyPqs.Ui.csproj" />
   </ItemGroup>
 
 </Project>

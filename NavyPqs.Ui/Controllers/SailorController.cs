@@ -50,10 +50,13 @@ namespace NavyPqs.Ui.Controllers
         {
             if (ModelState.IsValid)
             {
-                var response = sailorService.CreateSailor(sailorViewModel.Rank, sailorViewModel.FirstName, sailorViewModel.LastName);
-                if(response) return RedirectToAction(nameof(Index));
+                var response = sailorService.CreateSailor(sailorViewModel.Rank, sailorViewModel.FirstName,
+                    sailorViewModel.LastName);
+                if (response) return RedirectToAction(nameof(Index));
             }
-            logger.LogError($"Create failed. {sailorViewModel.Rank} {sailorViewModel.FirstName} {sailorViewModel.LastName}");
+
+            logger.LogError(
+                $"Create failed. {sailorViewModel.Rank} {sailorViewModel.FirstName} {sailorViewModel.LastName}");
             return View(sailorViewModel);
         }
 
@@ -80,11 +83,13 @@ namespace NavyPqs.Ui.Controllers
             if (id != sailorViewModel.Id) return NotFound();
             if (!ModelState.IsValid) return View(sailorViewModel);
 
-            var sailor = 
-                new Sailor(sailorViewModel.Id, sailorViewModel.Rank, sailorViewModel.FirstName, sailorViewModel.LastName);
+            var sailor =
+                new Sailor(sailorViewModel.Id, sailorViewModel.Rank, sailorViewModel.FirstName,
+                    sailorViewModel.LastName);
             var response = sailorService.EditSailor(id, sailor);
-            if(response) return RedirectToAction(nameof(Index));
-            logger.LogError($"Edit failed. {sailorViewModel.Rank} {sailorViewModel.FirstName} {sailorViewModel.LastName}");
+            if (response) return RedirectToAction(nameof(Index));
+            logger.LogError(
+                $"Edit failed. {sailorViewModel.Rank} {sailorViewModel.FirstName} {sailorViewModel.LastName}");
             return View(sailorViewModel);
         }
 
@@ -112,6 +117,7 @@ namespace NavyPqs.Ui.Controllers
             {
                 logger.LogError($"Exception for ID: {id}, {ex.Message}.");
             }
+
             return RedirectToAction(nameof(Index));
         }
     }

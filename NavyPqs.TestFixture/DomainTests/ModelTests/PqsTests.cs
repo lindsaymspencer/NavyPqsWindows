@@ -1,7 +1,7 @@
 ﻿using NavyPqs.Domain.Models;
 using NUnit.Framework;
 
-namespace NavyPqs.TestFixture.ModelTests
+namespace NavyPqs.TestFixture.DomainTests.ModelTests
 {
     [TestFixture]
     public class PqsTests
