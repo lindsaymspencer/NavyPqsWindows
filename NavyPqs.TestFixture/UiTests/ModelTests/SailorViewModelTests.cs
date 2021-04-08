@@ -25,10 +25,7 @@ namespace NavyPqs.TestFixture.UiTests.ModelTests
 
             var actual = SailorViewModel.CreateFrom(expected);
 
-            Assert.AreEqual(expected.Id, actual.Id);
-            Assert.AreEqual(expected.Rank, actual.Rank);
-            Assert.AreEqual(expected.FirstName, actual.FirstName);
-            Assert.AreEqual(expected.LastName, actual.LastName);
+            Assert.AreEqual(expected.ToJson(), helper.ToJson(actual));
         }
     }
 }
