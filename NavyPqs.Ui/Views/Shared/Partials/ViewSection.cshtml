@@ -1,11 +1,50 @@
 ﻿@model NavyPqs.Ui.Models.SectionViewModel
 
+<style>
+    ul {
+        list-style-type: disc;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        list-style-position: inside;
+        list-style-type: none;
+    }
+</style>
 <div>
-    <h5>@Html.DisplayFor(model => model.Number) - @Html.DisplayFor(model => model.Name)</h5>
-    <hr />
-    
-    @for (int i = 0; i < Model.LineItem.Length; i++)
-    {
-        @Html.DisplayFor(model => model.LineItem[i]) @Html.CheckBoxFor(model => model.Signed[i])
+    <h5>    
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    </h5>
+@{
+        int i = 0;
+    <ul>
+            @for (int j = 0; j < Model.Signed.Count(); j++)
+            {
+                if (true)
+                {
+            <li>@Html.CheckBoxFor(model => model.Signed[i])
+            @Html.DisplayFor(model => model.LineItem[i])</li>
+                }
+                i++;
+            }
+        </ul>
+        i = 0;
+        <div class="w3-container w3-clear w3-cell">
+            @for (int j = 0; j < Model.Signed.Count(); j++)
+            {
+                if (false)
+                {
+                    <p>
+                        @Html.CheckBoxFor(model => model.Signed[i])
+                        @Html.DisplayFor(model => model.LineItem[i])
+
+                    </p>
+                }
+                i++;
+            }
+        </div>
     }
 </div>

@@ -4,14 +4,44 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Html.DisplayFor(model => model.Rank) @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
-
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> | <a asp-action="Index">Back to List</a>
 </div>
 
-<br />
-
+<h1>
+    @Html.DisplayFor(model => model.Rank)
+    @Html.DisplayFor(model => model.FirstName)
+    @Html.DisplayFor(model => model.LastName)
+</h1>
 <div>
-    @await Html.PartialAsync("Partials/ViewPqs", Model.Pqses[0])
+    @*<a asp-action="Export" asp-route-id="@Model.Id">Export</a> |*@
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>
+
+<div class="w3-bar w3-theme-action">
+    <button class="w3-bar-item w3-button" onclick="openPqs('twoAlpha')">2A</button>
+    <button class="w3-bar-item w3-button" onclick="openPqs('twoBravo')">2B</button>
+</div>
+
+<div id="twoAlpha" class="w3-container pqs">
+    @{
+        await Html.RenderPartialAsync("../Shared/Partials/ViewPqs", Model.Pqses[0]);
+    }
+</div>
+
+<div id="twoBravo" class="w3-container pqs" style="display:none">
+    @{
+        await Html.RenderPartialAsync("../Shared/Partials/ViewPqs", Model.Pqses[1]);
+    }
+</div>
+
+<script>
+    function openPqs(pqs) {
+        var i;
+        var x = document.getElementsByClassName("pqs");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(pqs).style.display = "block";
+    }
+</script>
