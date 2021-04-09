@@ -6,6 +6,8 @@
     <p>@Html.DisplayFor(model => model.LongName) @Html.DisplayFor(model => model.Date)</p>
     
     <br />
-
-    @await Html.PartialAsync("Partials/ViewSection", Model.Sections[0])
+    @foreach (var section in Model.Sections)
+    {
+        @await Html.PartialAsync("Partials/ViewSection", section)
+    }
 </div>
