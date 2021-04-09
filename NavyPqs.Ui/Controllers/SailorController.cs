@@ -61,8 +61,9 @@ namespace NavyPqs.Ui.Controllers
         }
 
         // GET: Sailor/Edit/5
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int id, bool x)
         {
+            ViewData["EditSailor"] = x;
             var sailor = sailorService.GetSailor(id);
             if (sailor == null)
             {
@@ -78,14 +79,13 @@ namespace NavyPqs.Ui.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Rank,FirstName,LastName")] SailorViewModel sailorViewModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Rank,FirstName,LastName,Pqses")] SailorViewModel sailorViewModel)
         {
             if (id != sailorViewModel.Id) return NotFound();
             if (!ModelState.IsValid) return View(sailorViewModel);
 
-            var sailor =
-                new Sailor(sailorViewModel.Id, sailorViewModel.Rank, sailorViewModel.FirstName,
-                    sailorViewModel.LastName);
+
+            var sailor = new Sailor(sailorViewModel.Id, sailorViewModel.Rank, sailorViewModel.FirstName, sailorViewModel.LastName, );
             var response = sailorService.EditSailor(id, sailor);
             if (response) return RedirectToAction(nameof(Index));
             logger.LogError(
