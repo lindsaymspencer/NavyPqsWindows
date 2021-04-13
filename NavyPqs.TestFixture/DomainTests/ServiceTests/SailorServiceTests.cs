@@ -51,7 +51,7 @@ namespace NavyPqs.TestFixture.DomainTests.ServiceTests
         public void ShouldCallEditSailor()
         {
             mockSailorRepository.Setup(r => r.GetSailor(9))
-                .Returns(new Sailor(9, "Rank", "FirstName", "LastName", new List<IPqsModel>()));
+                .Returns(new Sailor(9, "Rank", "FirstName", "LastName"));
             var sailor = helper.Sailors[0];
             sailorService.EditSailor(9, sailor);
             mockSailorRepository.Verify(m => m.EditSailor(9, sailor), Times.Once);
