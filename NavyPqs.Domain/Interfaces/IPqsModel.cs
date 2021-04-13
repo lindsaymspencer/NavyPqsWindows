@@ -12,6 +12,8 @@ namespace NavyPqs.Domain.Interfaces
 
         [JsonIgnore] string LongName { get; }
 
+        [JsonIgnore] string ShortName { get; }
+
         [JsonIgnore] string Date { get; }
 
         List<Section> Sections { get; }

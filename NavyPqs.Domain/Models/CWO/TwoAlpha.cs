@@ -49,6 +49,8 @@ namespace NavyPqs.Domain.Models.Cwo
 
         public string LongName => "NAVEDTRA 43357-2A";
 
+        public string ShortName => $"{Pqs} {Version}";
+
         public string Date => "November 2016";
 
         public List<Section> Sections { get; }

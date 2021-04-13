@@ -85,7 +85,7 @@ namespace NavyPqs.Ui.Controllers
             if (!ModelState.IsValid) return View(sailorViewModel);
 
 
-            var sailor = new Sailor(sailorViewModel.Id, sailorViewModel.Rank, sailorViewModel.FirstName, sailorViewModel.LastName, );
+            var sailor = new Sailor(sailorViewModel.Id, sailorViewModel.Rank, sailorViewModel.FirstName, sailorViewModel.LastName);
             var response = sailorService.EditSailor(id, sailor);
             if (response) return RedirectToAction(nameof(Index));
             logger.LogError(

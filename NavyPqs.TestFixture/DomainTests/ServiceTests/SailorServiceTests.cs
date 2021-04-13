@@ -3,6 +3,8 @@ using NavyPqs.Domain.Interfaces;
 using NavyPqs.Domain.Services;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using NavyPqs.Domain.Models;
 
 namespace NavyPqs.TestFixture.DomainTests.ServiceTests
 {
@@ -48,6 +50,8 @@ namespace NavyPqs.TestFixture.DomainTests.ServiceTests
         [Test]
         public void ShouldCallEditSailor()
         {
+            mockSailorRepository.Setup(r => r.GetSailor(9))
+                .Returns(new Sailor(9, "Rank", "FirstName", "LastName", new List<IPqsModel>()));
             var sailor = helper.Sailors[0];
             sailorService.EditSailor(9, sailor);
             mockSailorRepository.Verify(m => m.EditSailor(9, sailor), Times.Once);

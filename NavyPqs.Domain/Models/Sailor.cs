@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using NavyPqs.Domain.Interfaces;
+﻿using NavyPqs.Domain.Interfaces;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace NavyPqs.Domain.Models
 {
@@ -22,7 +22,7 @@ namespace NavyPqs.Domain.Models
 
         [JsonProperty(Order = 3)] public string LastName { get; set; }
 
-        [JsonProperty(Order = 4)] public List<IPqsModel> Pqses { get; set; } = new List<IPqsModel>();
+        [JsonProperty(Order = 4)] public List<IPqsModel> Pqses { get; set; } = new();
 
         public string ToJson() => JsonConvert.SerializeObject(this);
     }
